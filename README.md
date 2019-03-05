@@ -19,8 +19,11 @@ Analyse des besoins => Spécifications => Conception architecturale => Conceptio
 
 
 
-- L'objectif de ce projet est de mettre en relation des étudiants et des recruteurs via une pateforme en ligne, un recruteur peut représenter une société unique ou plusieurs sociétés. Ce derner cherche à recruter un employé, un stagiaire, un apprenti pour une période donnée.
-- Le demandeur d'emploie s'inscrit et remplit son profil [ informations générales , compétences, ( CV QUOI ) ]
-- La plateforme montre tous les profils inscrits.
-- Le recruteur peut recherche différents profils selon certains filtres, ou seulement afficher tous les profils et faire ses propres choix
-- Le recruteur peut déposer une annonce ( MUR DES OFFRES D'EMPLOIS EN COURS  )
+
+---
+
+L'objectif de ce projet est de mettre en relation des étudiants et des recruteurs via une pateforme en ligne, un recruteur peut représenter une société unique ou plusieurs sociétés. Ce derner cherche à recruter un employé, un stagiaire, un apprenti pour une période donnée.
+Le demandeur d'emploie s'inscrit et remplit son profil [ informations générales , compétences, ( CV QUOI ) ]
+La plateforme montre tous les profils inscrits.
+Le recruteur peut recherche différents profils selon certains filtres, ou seulement afficher tous les profils et faire ses propres choix
+Le recruteur peut déposer une annonce ( MUR DES OFFRES D'EMPLOIS EN COURS  )
