@@ -81,8 +81,7 @@ maintenance
   - ID_USER
   - ID_COMP
   
-  
- - [POSTE]
+- [POSTE]
   - ID
   - TYPE_POSTE
   - NOM_POSTE
