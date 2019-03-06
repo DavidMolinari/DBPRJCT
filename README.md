@@ -2,32 +2,87 @@
 
 ---
 
-- Mettre en relations des étudiants et des recruteurs PLATEFORM
-recruteur rpst plusieurs société ou une societe unique qui recherche un employé / stagiaire
-depose une annonce , spécifie comp recherchees, niveau
-eleve se présente, (comme dans un cv) competences et lvl dans competences
-doit mettre en relation les recruteurs / eleves 
-exje veux un dev web php python mysql integration back office 5 ans d'expérience ( si 80% de comp, c'est bien de l'afficher en profil proche )
-SocialSharing annonces
-relation gros recruteur avec un vivier d'étudiants 
-si monsieur repst dcns veut 10 stagiaires d'une grosse fac
-reflechir a comment faire ça ( des groupes premium )
-- ANALYSE DES BESOINS
-- ENTITY
-- FONCTIONNALITES
-Analyse des besoins => Spécifications => Conception architecturale => Conception détaillée => Codage => Unit tests => tests d'integration => tests de validations => recettes
+Le but du projet est de créer une plateforme de mise en relation entre étudiants ( actuels ou récemment diplômés ) et recruteurs.
+Les étudiants doivent pouvoir rentrer toutes leurs informations pour créer leur profil / générer dynamiquement leur CV et passer des annonces pour rechercher un emploi ( que ce soit un stage, un CDD, CDI, etc... ).
+Les recruteurs doivent pouvoir parcourir les profils des étudiants en les filtrant par compétences, par zone géographique, etc...
+Ils doivent également pouvoir passer des annonces pour proposer des postes à pourvoir.
+
+Je vous demande :
+- d'écrire un court cahier des charges pour présenter l'ensemble du projet à développer,
+- d'identifier l'ensemble des objets que vous aurez à modéliser,
+- de faire le schéma relationnel de la base de données,
+- de définir l'arborescence des pages du site.
+
+Pensez à la fois au côté backoffice et au côté public et pensez aux différentes options qui pourraient être utiles.
 
 
 
 
 ---
+Les entitées qui ressortent :
 
-L'objectif de ce projet est de mettre en relation des étudiants et des recruteurs via une pateforme en ligne, un recruteur peut représenter une société unique ou plusieurs sociétés. Ce derner cherche à recruter un employé, un stagiaire, un apprenti pour une période donnée.
+Utilisateur / Etudiant / Recruteur / Compétence / Entreprise / Annonce / Emploi /association ( utilisateur / compétence ) / Association ( Recruteur / Entreprise )
 
-Le demandeur d'emploie s'inscrit et remplit son profil [ informations générales , compétences, ( CV QUOI ) ]
+----
 
-La plateforme montre tous les profils inscrits.
+Etude de faisabilité
+specs
+cnoception generale
+conception détaillée
+codage
+tests
+maintenance 
 
-Le recruteur peut recherche différents profils selon certains filtres, ou seulement afficher tous les profils et faire ses propres choix
+---
 
-Le recruteur peut déposer une annonce ( MUR DES OFFRES D'EMPLOIS EN COURS  )
+- [USER]
+  - ID
+  - EMAIL
+  - PASSWORD
+  - DATE_INSCRIPTION
+  
+- [ETUDIANT]
+  - ID
+  - PRENOM
+  - NOM
+  - ADRESSE
+  - PAYS / REGION
+  - CODE POSTAL
+  - NUM
+  - DESCRIPTION
+  - PHOTO
+- [RECRUTEUR]
+  - ID
+  - PRENOM
+  - NOM
+- [ENTREPRISE]
+  - ID
+  - NOM
+  - SECTEUR
+
+- [ASSOCIATION_ENTREPRISE_RECRUTEUR]
+  - ID_RECRUTEUR
+  - ID_ENTREPRISE
+  
+- [ANNONCE]
+  - ID
+  - TYPE_POSTE
+  - DATE_PUBLICATION
+  - DATE_EMBAUCHE
+  
+- [COMPETENCES]
+  - ID
+  - NOM
+  - VALIDEE
+
+
+- [ASSOCIATION_COMPETENCE_UTILISATEUR]
+  - ID
+  - ID_USER
+  - ID_COMP
+  
+  
+ - [POSTE]
+  - ID
+  - TYPE_POSTE
+  - NOM_POSTE
