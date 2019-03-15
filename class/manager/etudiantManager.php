@@ -6,7 +6,7 @@
  * Time: 11:41
  */
 
-require_once '../database/Database.php';
+require_once '../../database/Database.php';
 class etudiantManager
 {
     private $conn;
