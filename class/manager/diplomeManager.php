@@ -5,12 +5,13 @@
  * Date: 15/03/2019
  * Time: 11:33
  */
+require_once '../database/Database.php';
 class diplomeManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addDiplome(diplome $diplome)

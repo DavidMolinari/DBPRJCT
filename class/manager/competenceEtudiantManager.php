@@ -5,12 +5,13 @@
  * Date: 15/03/2019
  * Time: 11:23
  */
+require_once '../database/Database.php';
 class competenceEtudiantManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addCompetenceEtudiant(competenceEtudiant $competenceEtudiant)
