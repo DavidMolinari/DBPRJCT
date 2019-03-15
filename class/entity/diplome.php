@@ -7,23 +7,9 @@
  */
 class diplome
 {
-    private $id,$idEtudiant,$idEcole,$nbAnnees;
+    private $idEtudiant,$idEcole,$nbAnnees;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

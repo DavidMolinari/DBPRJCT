@@ -8,7 +8,6 @@
 
 class etudiant
 {
-    private $id;
     private $prenom;
     private $nom;
     private $adresse;
@@ -20,21 +19,7 @@ class etudiant
     private $avatar;
     private $idUser;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

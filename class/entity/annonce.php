@@ -7,23 +7,9 @@
  */
 class annonce
 {
-    private $id,$dateEmbauche ,$duree,$expAttendue,$idPoste,$idRecruteurEntreprise;
+    private $dateEmbauche ,$duree,$expAttendue,$idPoste,$idRecruteurEntreprise;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

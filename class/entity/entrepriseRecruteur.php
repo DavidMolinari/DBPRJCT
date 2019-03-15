@@ -8,25 +8,10 @@
 
 class entrepriseRecruteur
 {
-    private $id;
     private $idRecruteur;
     private $idEntreprise;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

@@ -7,23 +7,9 @@
  */
 class competenceEtudiant
 {
-    private $id,$idEtudiant,$idCompetence;
+    private $idEtudiant,$idCompetence;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed

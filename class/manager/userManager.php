@@ -8,5 +8,54 @@
 
 class userManager
 {
+    private $conn;
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
+    public function addUser(User $user) {
+        $login = $user->getLogin();
+        $password = $user->getPassword();
+        $registerDate = $user->getRegisterDate();
+
+        $query = "INSERT INTO USER (login, password, registerDate) values(
+        '".$login."',
+        '".$password."',
+        '".$registerDate."')";
+
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
+    }
+
+    public function getUsers() {
+        $sth = $this->conn->prepare("SELECT * from USER;");
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
+
+    public function deleteUser($id){
+        $query = "DELETE FROM USER WHERE ID = '".$id."'";
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
+    }
+
+    public function updateUserById($id, User $user) {
+        $query = "
+        UPDATE USER
+         SET 
+         login = '".htmlspecialchars($user->getLogin())."',
+         password = '".htmlspecialchars($user->getPassword())."',
+         registerDate = '".htmlspecialchars($email)."'
+         WHERE id = ".htmlspecialchars($id)."
+        ";
+
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
+
+    }
+
+
 
 }

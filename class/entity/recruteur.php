@@ -8,27 +8,12 @@
 
 class recruteur
 {
-    private $id;
     private $prenom;
     private $nom;
     private $num;
     private $idUser;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
