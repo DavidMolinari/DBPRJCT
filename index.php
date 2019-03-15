@@ -1,5 +1,6 @@
 <?php
 session_start();
+if(isset($_GET['chien'])) session_destroy();
 ?>
     <!DOCTYPE html>
     <html lang="en">
