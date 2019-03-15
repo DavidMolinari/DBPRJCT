@@ -30,7 +30,6 @@ function displayTableUsers($etudiants){
                 <td class='user_description'>".$etudiant->DESCRIPTION."</td>
                 <td class='user_avatar'>".$etudiant->AVATAR."</td>
                 <td class='user_isUser'>".$etudiant->ID_USER."</td>
-                <td class='user_last_login'>TODO</td>
                 <td class='user_edit'><button data-id='".$etudiant->ID."' class='btn btn-success editUser'></button></td>
                 <td class='user_remove'><button data-id='".$etudiant->ID."' class='btn btn-danger removeUser'></button></td>
             </tr>";

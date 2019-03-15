@@ -34,6 +34,7 @@ $(function() {
 
     // RECRUTEURS
     $(".baseMainContainer").on('click', '#myRecruteurs', function() {
+        console.log("ouai");
         $.ajax({
             url: "./core/recruteur/getRecruteurs.php?g",
             method: "get"
