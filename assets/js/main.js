@@ -16,6 +16,22 @@ $(function() {
         }).fail(function (jqXHR, textStatus) {
         });
     });
+    // ETUDIANTS
+    $(".baseMainContainer").on('click', '#myEtudiants', function() {
+        $.ajax({
+            url: "./core/etudiant/getEtudiants.php?g",
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
+
+
     $(".baseMainContainer").on('click', '.removeUser', function() {
        console.log($(this).data('id'));
     });
