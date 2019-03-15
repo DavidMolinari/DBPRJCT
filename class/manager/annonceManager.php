@@ -16,9 +16,9 @@ class annonceManager
     public function addAnnonce(annonce $annonce)
     {
         $dateEmbauche = $annonce->getDateEmbauche();
-        $duree  = $annonce->getDuree();
+        $duree = $annonce->getDuree();
         $expAttendue = $annonce->getExpAttendue();
-        $idPoste= $annonce->getIdPoste();
+        $idPoste = $annonce->getIdPoste();
         $idRecruteurEntreprise = $annonce->getIdRecruteurEntreprise();
 
         $query = "
