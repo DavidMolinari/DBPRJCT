@@ -2,11 +2,10 @@ $(function() {
     // Handler for .ready() called.
     console.log('page ready');
 
-
     // USERS
     $(".baseMainContainer").on('click', '#myUsers', function() {
         $.ajax({
-            url: "./core/Users.php?g",
+            url: "./core/user/getUsers.php?g",
             method: "get"
         }).done(function (response) {
             $('.entitiesTables').html(

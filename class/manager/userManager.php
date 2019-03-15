@@ -5,7 +5,7 @@
  * Date: 15/03/2019
  * Time: 10:23
  */
-require_once '../database/Database.php';
+require_once '../../database/Database.php';
 class userManager
 {
     private $conn;
@@ -63,6 +63,18 @@ class userManager
         $sth->execute();
     }
 
+    /**
+     * @param $login
+     * @param $pwd
+     * @return bool
+     */
+    public function verifyConnexion($login, $pwd){
+        $query = "SELECT * FROM USER WHERE LOGIN = '".$login."' AND PASSWORD = '".$pwd."'";
+        $sth = $this->conn->prepare($query);
+        $res = $sth->execute();
+        if($res != null) return true;
+        return false;
+    }
 
 
 }
