@@ -5,6 +5,7 @@
  * Date: 15/03/2019
  * Time: 11:45
  */
+require_once '../database/Database.php';
 class ecoleManager
 {
 
