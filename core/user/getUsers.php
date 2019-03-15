@@ -6,12 +6,6 @@
  * Time: 12:13
  */
 
-<<<<<<< HEAD:core/users.php
-
-=======
-if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
->>>>>>> eb0a495bce41af5642d061e25cd49015064cecbb:core/user/getUsers.php
-
 if(isset($_GET['g'])){
 
     require_once '../../class/manager/userManager.php';
