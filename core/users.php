@@ -6,7 +6,7 @@
  * Time: 12:13
  */
 
-require_once '../../vendor/autoload.php';
+
 
 if(isset($_GET['g'])){
 
