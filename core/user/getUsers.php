@@ -6,11 +6,11 @@
  * Time: 12:13
  */
 
-require_once '../../vendor/autoload.php';
+if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
 
 if(isset($_GET['g'])){
 
-    require_once '../class/manager/userManager.php';
+    require_once '../../class/manager/userManager.php';
     $userManager = new UserManager();
     $users = $userManager->getUsers();
 }
