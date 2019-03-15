@@ -8,9 +8,9 @@
 class entrepriseManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addEntreprise(entreprise $entreprise)

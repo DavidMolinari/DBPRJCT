@@ -8,9 +8,9 @@
 class competenceManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addCompetence(competence $competence) {
