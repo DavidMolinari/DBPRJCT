@@ -5,7 +5,7 @@
  * Date: 15/03/2019
  * Time: 10:26
  */
-class annonceManageur
+class annonceManager
 {
     private $conn;
     public function __construct($conn)
@@ -33,8 +33,14 @@ class annonceManageur
         $sth = $this->conn->prepare($query);
         $sth->execute();
     }
-
-    public function getAnnonce()
+    public function getAnnonce($id)
+    {
+        $sth = $this->conn->prepare("SELECT * FROM `annonce` WHERE `ID` ='".$id."'");
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
+    public function getAnnonces()
     {
         $sth = $this->conn->prepare("SELECT * from `annonce`;");
         $sth->execute();
