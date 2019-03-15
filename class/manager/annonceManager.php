@@ -60,8 +60,18 @@ class annonceManager
      * @param User $user
      */
     public function updateAnnonceById($id, annonce $annonce) {
-        $nom = $annonce->getNom();
-        // Requete à compléter
-        $query = "UPDATE USER set nom = '".$nom."' where ID = " . $id . ";";
+        $query = "
+        UPDATE USER
+         SET 
+         dateEmbauche = '".htmlspecialchars($dateEmbauche = $annonce->getDateEmbauche())."',
+         duree = '".htmlspecialchars($duree  = $annonce->getDuree())."',
+         expAttendue = '".htmlspecialchars($expAttendue = $annonce->getExpAttendue())."'
+         idPoste ='".htmlspecialchars($idPoste= $annonce->getIdPoste())."'
+         idRecruteurEntreprise = '".htmlspecialchars($idRecruteurEntreprise = $annonce->getIdRecruteurEntreprise())."'         
+         WHERE id = ".htmlspecialchars($id)."
+        ";
+
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
     }
 }
