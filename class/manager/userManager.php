@@ -18,11 +18,13 @@ class userManager
         $login = $user->getLogin();
         $password = $user->getPassword();
         $registerDate = $user->getRegisterDate();
+        $isAdmin = $user->getisAdmin();
 
-        $query = "INSERT INTO USER (login, password, registerDate) values(
+        $query = "INSERT INTO USER (login, password, registerDate, is_admin) values(
         '".$login."',
         '".$password."',
-        '".$registerDate."')";
+        '".$registerDate."',
+        '".$isAdmin."')";
 
         $sth = $this->conn->prepare($query);
         $sth->execute();
@@ -47,7 +49,8 @@ class userManager
          SET 
          login = '".htmlspecialchars($user->getLogin())."',
          password = '".htmlspecialchars($user->getPassword())."',
-         registerDate = '".htmlspecialchars($user->getRegisterDate())."'
+         registerDate = '".htmlspecialchars($user->getRegisterDate())."',
+         is_admin = '".htmlspecialchars($user->getisAdmin())."'
          WHERE id = ".htmlspecialchars($id)."
         ";
 

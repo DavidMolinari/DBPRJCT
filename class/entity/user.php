@@ -11,6 +11,23 @@ class user
     private $login;
     private $password;
     private $registerDate;
+    private $isAdmin;
+
+    /**
+     * @return mixed
+     */
+    public function getisAdmin()
+    {
+        return $this->isAdmin;
+    }
+
+    /**
+     * @param mixed $isAdmin
+     */
+    public function setIsAdmin($isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+    }
 
 
 
