@@ -5,20 +5,21 @@
  * Date: 15/03/2019
  * Time: 10:26
  */
-class annonceManageur
+require_once '../database/Database.php';
+class annonceManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addAnnonce(annonce $annonce)
     {
         $dateEmbauche = $annonce->getDateEmbauche();
-        $duree  = $annonce->getDuree();
+        $duree = $annonce->getDuree();
         $expAttendue = $annonce->getExpAttendue();
-        $idPoste= $annonce->getIdPoste();
+        $idPoste = $annonce->getIdPoste();
         $idRecruteurEntreprise = $annonce->getIdRecruteurEntreprise();
 
         $query = "
@@ -33,8 +34,14 @@ class annonceManageur
         $sth = $this->conn->prepare($query);
         $sth->execute();
     }
-
-    public function getAnnonce()
+    public function getAnnonce($id)
+    {
+        $sth = $this->conn->prepare("SELECT * FROM `annonce` WHERE `ID` ='".$id."'");
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
+    public function getAnnonces()
     {
         $sth = $this->conn->prepare("SELECT * from `annonce`;");
         $sth->execute();
@@ -54,8 +61,18 @@ class annonceManageur
      * @param User $user
      */
     public function updateAnnonceById($id, annonce $annonce) {
-        $nom = $annonce->getNom();
-        // Requete à compléter
-        $query = "UPDATE USER set nom = '".$nom."' where ID = " . $id . ";";
+        $query = "
+        UPDATE USER
+         SET 
+         dateEmbauche = '".htmlspecialchars($dateEmbauche = $annonce->getDateEmbauche())."',
+         duree = '".htmlspecialchars($duree  = $annonce->getDuree())."',
+         expAttendue = '".htmlspecialchars($expAttendue = $annonce->getExpAttendue())."'
+         idPoste ='".htmlspecialchars($idPoste= $annonce->getIdPoste())."'
+         idRecruteurEntreprise = '".htmlspecialchars($idRecruteurEntreprise = $annonce->getIdRecruteurEntreprise())."'         
+         WHERE id = ".htmlspecialchars($id)."
+        ";
+
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
     }
 }

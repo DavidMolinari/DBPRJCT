@@ -8,11 +8,6 @@
 class ecole
 {
     private $nom,$specialite,$todelete;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 56e6079207146c4a86ef0a29eac6a77cc387437a
 
     /**
      * @return mixed

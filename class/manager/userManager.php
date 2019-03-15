@@ -5,13 +5,13 @@
  * Date: 15/03/2019
  * Time: 10:23
  */
-
+require_once '../database/Database.php';
 class userManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addUser(user $user) {
