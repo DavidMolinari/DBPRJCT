@@ -47,10 +47,25 @@ $(function() {
         });
     });
 
-    // RECRUTEURS
+    // ANNONCES
     $(".baseMainContainer").on('click', '#myAnnonces', function() {
         $.ajax({
             url: "./core/annonce/getAnnonces.php?g",
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
+
+    // COMPETENCES
+    $(".baseMainContainer").on('click', '#myCompetences', function() {
+        $.ajax({
+            url: "./core/competence/getCompetences.php?g",
             method: "get"
         }).done(function (response) {
             $('.entitiesTables').html(
