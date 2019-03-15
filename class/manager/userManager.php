@@ -9,7 +9,7 @@ require_once '../../database/Database.php';
 class userManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
         $this->conn = Database::connect();
     }
