@@ -47,7 +47,7 @@ $(function() {
         });
     });
 
-    // RECRUTEURS
+    // ANNONCES
     $(".baseMainContainer").on('click', '#myAnnonces', function() {
         $.ajax({
             url: "./core/annonce/getAnnonces.php?g",
