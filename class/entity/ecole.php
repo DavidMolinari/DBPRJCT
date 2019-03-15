@@ -7,23 +7,7 @@
  */
 class ecole
 {
-    private $id,$nom,$specialite,$todelete;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
+    private $nom,$specialite,$todelete;
 
     /**
      * @return mixed
