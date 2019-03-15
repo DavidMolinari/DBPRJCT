@@ -6,12 +6,13 @@
  * Time: 10:54
  */
 
+require_once '../database/Database.php';
 class recruteurManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addRecruteur(recruteur $recruteur) {

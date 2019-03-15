@@ -6,13 +6,13 @@
  * Time: 11:15
  */
 
+require_once '../database/Database.php';
 class postulantManager
 {
-
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addPostulant(postulant $postulant) {

@@ -6,12 +6,13 @@
  * Time: 11:19
  */
 
+require_once '../database/Database.php';
 class posteManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addPoste(poste $poste) {

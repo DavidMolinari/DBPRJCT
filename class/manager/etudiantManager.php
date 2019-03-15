@@ -6,12 +6,13 @@
  * Time: 11:41
  */
 
+require_once '../database/Database.php';
 class etudiantManager
 {
     private $conn;
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        $this->conn = Database::connect();
     }
 
     public function addEtudiant(etudiant $etudiant) {
