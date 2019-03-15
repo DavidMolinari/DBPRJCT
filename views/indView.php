@@ -60,9 +60,9 @@
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Entities:</h6>
-                    <a class="collapse-item"  id="myUsers" href="#">Users</a>
+                    <a class="collapse-item" id="myUsers" href="#">Users</a>
                     <a class="collapse-item" id="myEtudiants" href="#">Etudiants</a>
-                    <a class="collapse-item" href="login.html">Recruteurs</a>
+                    <a class="collapse-item" if="myRecruteurs" href="#">Recruteurs</a>
                     <a class="collapse-item" href="login.html">Annonces</a>
                     <a class="collapse-item" href="login.html">Compétences</a>
                     <a class="collapse-item" href="login.html">Postes</a>

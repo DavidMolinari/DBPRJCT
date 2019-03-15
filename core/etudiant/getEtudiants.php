@@ -20,8 +20,8 @@ function displayTableUsers($etudiants){
         echo
             "<tr>
                 <td class='user_id'>".$etudiant->ID."</td>
-                <td class='user_login'>".$etudiant->PRENOM."</td>
-                <td class='user_password'>".$etudiant->NOM."</td>
+                <td class='user_prenom'>".$etudiant->PRENOM."</td>
+                <td class='user_nom'>".$etudiant->NOM."</td>
                 <td class='user_adresse'>".$etudiant->ADRESSE."</td>
                 <td class='user_ville'>".$etudiant->VILLE."</td>
                 <td class='user_region'>".$etudiant->REGION."</td>
@@ -63,6 +63,8 @@ function displayTableUsers($etudiants){
                         <th>description</th>
                         <th>avatar</th>
                         <th>user</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -78,6 +80,8 @@ function displayTableUsers($etudiants){
                         <th>description</th>
                         <th>avatar</th>
                         <th>user</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     </tfoot>
                     <tbody>

@@ -32,6 +32,21 @@ $(function() {
         });
     });
 
+    // RECRUTEURS
+    $(".baseMainContainer").on('click', '#myRecruteurs', function() {
+        $.ajax({
+            url: "./core/recruteur/getRecruteurs.php?g",
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
+
 
     $(".baseMainContainer").on('click', '.removeUser', function() {
        console.log($(this).data('id'));
