@@ -65,8 +65,8 @@
                     <a class="collapse-item" id="myRecruteurs" href="#">Recruteurs</a>
                     <a class="collapse-item" id="myAnnonces" href="#">Annonces</a>
                     <a class="collapse-item" id="myCompetences" href="#">Compétences</a>
-                    <a class="collapse-item" href="login.html">Postes</a>
-                    <a class="collapse-item" href="login.html">Diplomes</a>
+                    <a class="collapse-item" id="myPostes" href="#">Postes</a>
+                    <a class="collapse-item" id="myDiplomes" href="#">Diplomes</a>
                 </div>
             </div>
         </li>

@@ -77,6 +77,37 @@ $(function() {
         });
     });
 
+    // POSTE
+    $(".baseMainContainer").on('click', '#myPostes', function() {
+        $.ajax({
+            url: "./core/poste/getPostes.php?g",
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
+
+
+    // DIPLOME
+    $(".baseMainContainer").on('click', '#myDiplomes', function() {
+        $.ajax({
+            url: "./core/diplome/getDiplomes.php?g",
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
+
 
     $(".baseMainContainer").on('click', '.removeUser', function() {
        console.log($(this).data('id'));
