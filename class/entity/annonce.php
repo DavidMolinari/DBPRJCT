@@ -8,8 +8,11 @@
 class annonce
 {
     private $dateEmbauche ,$duree,$expAttendue,$idPoste,$idRecruteurEntreprise;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56e6079207146c4a86ef0a29eac6a77cc387437a
 
     /**
      * @return mixed

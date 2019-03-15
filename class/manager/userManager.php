@@ -14,7 +14,7 @@ class userManager
         $this->conn = $conn;
     }
 
-    public function addUser(User $user) {
+    public function addUser(user $user) {
         $login = $user->getLogin();
         $password = $user->getPassword();
         $registerDate = $user->getRegisterDate();
@@ -41,19 +41,26 @@ class userManager
         $sth->execute();
     }
 
-    public function updateUserById($id, User $user) {
+    public function updateUserById($id, user $user) {
         $query = "
         UPDATE USER
          SET 
          login = '".htmlspecialchars($user->getLogin())."',
          password = '".htmlspecialchars($user->getPassword())."',
-         registerDate = '".htmlspecialchars($email)."'
+         registerDate = '".htmlspecialchars($user->getRegisterDate())."'
          WHERE id = ".htmlspecialchars($id)."
         ";
 
         $sth = $this->conn->prepare($query);
         $sth->execute();
 
+    }
+
+    public function getUser($id)
+    {
+        $query = "SELECT FROM USER WHERE ID = '".$id."'";
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
     }
 
 
