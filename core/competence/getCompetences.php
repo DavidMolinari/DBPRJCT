@@ -10,8 +10,8 @@ if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/au
 if(isset($_GET['g'])){
 
     require_once '../../class/manager/competenceManager.php';
-    $competencesManager = new competenceEtudiant();
-    $competences = $competencesManager->getIdCompetence();
+    $competencesManager = new competenceManager();
+    $competences = $competencesManager->getCompetences();
 }
 
 function displayTableUsers($competences){
