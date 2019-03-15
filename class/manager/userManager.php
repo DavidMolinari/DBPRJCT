@@ -58,7 +58,7 @@ class userManager
 
     public function getUser($id)
     {
-        $query = "SELECT FROM USER WHERE ID = '".$id."'";
+        $query = "SELECT * FROM USER WHERE ID = '".$id."'";
         $sth = $this->conn->prepare($query);
         $sth->execute();
     }
