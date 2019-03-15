@@ -5,7 +5,7 @@
  * Date: 15/03/2019
  * Time: 10:23
  */
-require_once '../../database/Database.php';
+require_once '../database/Database.php';
 class userManager
 {
     private $conn;
