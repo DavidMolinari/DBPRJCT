@@ -6,7 +6,7 @@
  * Time: 11:19
  */
 
-require_once '../database/Database.php';
+require_once '../../database/Database.php';
 class posteManager
 {
     private $conn;

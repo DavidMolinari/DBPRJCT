@@ -16,6 +16,7 @@ $(function() {
         }).fail(function (jqXHR, textStatus) {
         });
     });
+
     // ETUDIANTS
     $(".baseMainContainer").on('click', '#myEtudiants', function() {
         $.ajax({

@@ -5,7 +5,7 @@
  * Date: 15/03/2019
  * Time: 11:23
  */
-require_once '../database/Database.php';
+require_once '../../database/Database.php';
 class competenceEtudiantManager
 {
     private $conn;

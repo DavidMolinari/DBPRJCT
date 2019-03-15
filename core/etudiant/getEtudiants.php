@@ -89,6 +89,5 @@ function displayTableUsers($etudiants){
             </div>
         </div>
     </div>
-
 </div>
 <!-- /.container-fluid -->

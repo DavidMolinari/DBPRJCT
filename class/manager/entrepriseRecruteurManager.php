@@ -6,7 +6,7 @@
  * Time: 13:42
  */
 
-require_once '../database/Database.php';
+require_once '../../database/Database.php';
 class entrepriseRecruteurManager
 {
     private $conn;

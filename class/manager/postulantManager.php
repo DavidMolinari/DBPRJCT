@@ -6,7 +6,7 @@
  * Time: 11:15
  */
 
-require_once '../database/Database.php';
+require_once '../../database/Database.php';
 class postulantManager
 {
     private $conn;
