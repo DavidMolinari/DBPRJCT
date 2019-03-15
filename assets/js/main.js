@@ -34,9 +34,23 @@ $(function() {
 
     // RECRUTEURS
     $(".baseMainContainer").on('click', '#myRecruteurs', function() {
-        console.log("ouai");
         $.ajax({
             url: "./core/recruteur/getRecruteurs.php?g",
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
+
+    // RECRUTEURS
+    $(".baseMainContainer").on('click', '#myAnnonces', function() {
+        $.ajax({
+            url: "./core/annonce/getAnnonces.php?g",
             method: "get"
         }).done(function (response) {
             $('.entitiesTables').html(
