@@ -110,9 +110,21 @@ $(function() {
 
 
     $(".baseMainContainer").on('click', '.removeUser', function() {
-       console.log($(this).data('id'));
-    });
 
+        $.ajax({
+            url: "./core/user/getUsers.php?delete",
+            cache: false,
+            data: 'order_id=' + $(this).data('id'),
+            method: "get"
+        }).done(function (response) {
+            $('.entitiesTables').html(
+                response
+            );
+            $('#dataTable').DataTable();
+
+        }).fail(function (jqXHR, textStatus) {
+        });
+    });
 
 
 

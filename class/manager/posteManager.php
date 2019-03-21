@@ -5,8 +5,7 @@
  * Date: 15/03/2019
  * Time: 11:19
  */
-$debutCHemin = $_SERVER["DOCUMENT_ROOT"];
-require_once $debutCHemin.'DBPRJCT/database/Database.php';
+require_once '../../database/Database.php';
 
 class posteManager
 {
