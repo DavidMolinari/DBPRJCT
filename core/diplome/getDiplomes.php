@@ -10,7 +10,7 @@
 if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
 if(isset($_GET['g'])){
 
-    require_once '../../class/manager/diplomeManager.php';
+    require_once '../../class/old_manager/diplomeManager.php';
     $diplomeManager = new diplomeManager();
     $diplomes = $diplomeManager->getDiplomes();
 }

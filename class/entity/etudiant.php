@@ -1,136 +1,136 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: utilisateur
- * Date: 15/03/2019
- * Time: 09:40
+ * User: Davvm
+ * Date: 24/05/2019
+ * Time: 00:38
  */
 
 class etudiant
 {
-    private $prenom;
-    private $nom;
-    private $adresse;
-    private $ville;
-    private $region;
-    private $isMobile;
-    private $num;
+    private $id_etudiant;
+    private $facebook;
+    private $linkedin;
+    private $twitter;
+    private $website;
     private $description;
-    private $avatar;
-    private $idUser;
+    private $competences;
+    private $ecole;
+
+    /**
+     * @return mixed
+     */
+    public function getEcole()
+    {
+        return $this->ecole;
+    }
+
+    /**
+     * @param mixed $ecole
+     */
+    public function setEcole($ecole)
+    {
+        $this->ecole = $ecole;
+    }
 
 
 
     /**
      * @return mixed
      */
-    public function getPrenom()
+    public function getCompetences()
     {
-        return $this->prenom;
+        return $this->competences;
     }
 
     /**
-     * @param mixed $prenom
+     * @param mixed $competences
      */
-    public function setPrenom($prenom)
+    public function setCompetences($competences)
     {
-        $this->prenom = $prenom;
+        $this->competences = $competences;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getIdEtudiant()
+    {
+        return $this->id_etudiant;
+    }
+
+    /**
+     * @param mixed $id_etudiant
+     */
+    public function setIdEtudiant($id_etudiant)
+    {
+        $this->id_etudiant = $id_etudiant;
     }
 
     /**
      * @return mixed
      */
-    public function getNom()
+    public function getFacebook()
     {
-        return $this->nom;
+        return $this->facebook;
     }
 
     /**
-     * @param mixed $nom
+     * @param mixed $facebook
      */
-    public function setNom($nom)
+    public function setFacebook($facebook)
     {
-        $this->nom = $nom;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
-    }
-
-    /**
-     * @param mixed $adresse
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
+        $this->facebook = $facebook;
     }
 
     /**
      * @return mixed
      */
-    public function getVille()
+    public function getLinkedin()
     {
-        return $this->ville;
+        return $this->linkedin;
     }
 
     /**
-     * @param mixed $ville
+     * @param mixed $linkedin
      */
-    public function setVille($ville)
+    public function setLinkedin($linkedin)
     {
-        $this->ville = $ville;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRegion()
-    {
-        return $this->region;
-    }
-
-    /**
-     * @param mixed $region
-     */
-    public function setRegion($region)
-    {
-        $this->region = $region;
+        $this->linkedin = $linkedin;
     }
 
     /**
      * @return mixed
      */
-    public function getisMobile()
+    public function getTwitter()
     {
-        return $this->isMobile;
+        return $this->twitter;
     }
 
     /**
-     * @param mixed $isMobile
+     * @param mixed $twitter
      */
-    public function setIsMobile($isMobile)
+    public function setTwitter($twitter)
     {
-        $this->isMobile = $isMobile;
+        $this->twitter = $twitter;
     }
 
     /**
      * @return mixed
      */
-    public function getNum()
+    public function getWebsite()
     {
-        return $this->num;
+        return $this->website;
     }
 
     /**
-     * @param mixed $num
+     * @param mixed $website
      */
-    public function setNum($num)
+    public function setWebsite($website)
     {
-        $this->num = $num;
+        $this->website = $website;
     }
 
     /**
@@ -149,35 +149,5 @@ class etudiant
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAvatar()
-    {
-        return $this->avatar;
-    }
 
-    /**
-     * @param mixed $avatar
-     */
-    public function setAvatar($avatar)
-    {
-        $this->avatar = $avatar;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * @param mixed $idUser
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-    }
 }

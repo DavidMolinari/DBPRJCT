@@ -10,7 +10,7 @@ if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/au
 
 if(isset($_GET['g'])){
 
-    require_once '../../class/manager/etudiantManager.php';
+    require_once '../../class/old_manager/etudiantManager.php';
     $etudiantManager = new etudiantManager();
     $etudiants = $etudiantManager->getEtudiants();
 }

@@ -1,19 +1,20 @@
 <?php
 session_start();
 // TODO REQUIRE USER MANAGER
-require_once '../database/Database.php';
-if(!isset($_POST['email']) && !isset($_POST['pwd']))
+require_once    $_SERVER['DOCUMENT_ROOT'] . '/database/Database.php';
+include_once    $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+if (!isset($_POST['email']) && !isset($_POST['pwd']))
     die('Paramètres manquants');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/class/manager/userManager.php';
 
-$login = htmlspecialchars($_POST['inputEmail']);
-$password = htmlspecialchars($_POST['inputPassword']);
-// Création d'une connexion avec des données en brut ( flemme )
-// Connexion directement depuis le Manager
-// Création d'un admin manager
-//if($adminManager->verifyLogin($admin) == true ) {
-//    $_SESSION['admin'] = serialize($admin);
-    // Affichage de la page admin;
-    $_SESSION['TODO'] = 'TODO';
+$userManager = new UserManager();
+$login = htmlspecialchars($_POST['email']);
+$password = htmlspecialchars($_POST['pwd']);
+
+if ($userManager->auth($login, $password) == true) {
+
+    $_SESSION['TODO'] = $login;
     echo '<script type="text/javascript"> window.open("../index.php","_self");</script>';
-//} else {
-//    echo "<h2 style='color: red;'> IDENTIFIANTS NON VALIDES !</h2>";
+} else {
+    echo "<h2 style='color: red;'> IDENTIFIANTS NON VALIDES !</h2>";
+}

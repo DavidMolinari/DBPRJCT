@@ -1,81 +1,46 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: utilisateur
- * Date: 15/03/2019
- * Time: 09:49
+ * User: Davvm
+ * Date: 24/05/2019
+ * Time: 00:46
  */
 
 class recruteur
 {
-    private $prenom;
-    private $nom;
-    private $num;
-    private $idUser;
-
-
+    private $id_recruteur;
+    private $entreprise;
 
     /**
      * @return mixed
      */
-    public function getPrenom()
+    public function getEntreprise()
     {
-        return $this->prenom;
+        return $this->entreprise;
     }
 
     /**
-     * @param mixed $prenom
+     * @param mixed $entreprise
      */
-    public function setPrenom($prenom)
+    public function setEntreprise($entreprise)
     {
-        $this->prenom = $prenom;
+        $this->entreprise = $entreprise;
     }
 
     /**
      * @return mixed
      */
-    public function getNom()
+    public function getIdRecruteur()
     {
-        return $this->nom;
+        return $this->id_recruteur;
     }
 
     /**
-     * @param mixed $nom
+     * @param mixed $id_recruteur
      */
-    public function setNom($nom)
+    public function setIdRecruteur($id_recruteur)
     {
-        $this->nom = $nom;
+        $this->id_recruteur = $id_recruteur;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNum()
-    {
-        return $this->num;
-    }
-
-    /**
-     * @param mixed $num
-     */
-    public function setNum($num)
-    {
-        $this->num = $num;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * @param mixed $idUser
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-    }
 }

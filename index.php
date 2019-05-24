@@ -8,16 +8,12 @@ if(isset($_GET['chien'])) session_destroy();
     <body class="baseMainContainer">
 <?php
 if(isset($_SESSION['TODO'])) {
-
     //TODO Basic template
-
     include_once 'views/indView.php';
-
 }
 else
     include_once 'views/login.html';
 ?>
-
 
     <!--    DATATABLE-->
     <!-- Bootstrap core JavaScript-->
@@ -31,6 +27,7 @@ else
     <script src="assets/js/sb-admin-2.min.js"></script>
     <script src="assets/js/main.js"></script>
 
+<!-- jQuery Modal -->
 
     <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 

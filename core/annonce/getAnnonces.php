@@ -6,29 +6,28 @@
  * Time: 15:53
  */
 
-if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
-if(isset($_GET['g'])){
+require_once $_SERVER['DOCUMENT_ROOT'] . '/DBPRJCT/class/manager/userManager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/DBPRJCT/class/manager/annonceManager.php';
+if (file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
 
-    require_once '../../class/manager/annonceManager.php';
-    $annonceManage = new annonceManager();
-    $annonces = $annonceManage->getAnnonces();
-}
+$annonceManage = new annonceManager();
+$annonces = $annonceManage->getAnnoncesRecruteurs();
 
-function displayTableUsers($annonces){
-    foreach($annonces as $annonce){
+function displayAnnonces($annonces)
+{
+    foreach ($annonces as $annonce) {
         echo
-            "<tr>
-                <td class='user_id'>".$annonce->ID."</td>
-                <td class='user_date_embauche'>".$annonce->DATE_EMBAUCHE."</td>
-                <td class='user_duree'>".$annonce->DUREE."</td>
-                <td class='user_exp_attendue'>".$annonce->EXP_ATTENDUE."</td>
-                <td class='user_id_poste'>".$annonce->ID_POSTE."</td>
-                <td class='user_id_recruteur_entreprise'>".$annonce->ID_RECRUTEUR_ENTREPRISE."</td>
-                <td class='user_edit'><button data-id='".$annonce->ID."' class='btn btn-success editUser'></button></td>
-                <td class='user_remove'><button data-id='".$annonce->ID."' class='btn btn-danger removeUser'></button></td>
-            </tr>";
+        '<div class="card" style="width: 18rem; margin: 1em;">
+                <img class="card-img-top" src="https://picsum.photos/id/575/280/180" alt="Card image cap">
+                 <div class="card-body">
+                    <h5 class="card-title">'.utf8_encode($annonce->prenom). ' '  .utf8_encode($annonce->prenom). '</h5>
+                    <p class="card-text">'.utf8_encode($annonce->abstract).'</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+                </div>';
     }
 }
+
 ?>
 
 <!-- Begin Page Content -->
@@ -36,47 +35,10 @@ function displayTableUsers($annonces){
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Annonces</h1>
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Annonces</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Date Embauche</th>
-                        <th>Duree</th>
-                        <th>exp attendue</th>
-                        <th>id poste</th>
-                        <th>id recruteur entreprise</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Id</th>
-                        <th>Date Embauche</th>
-                        <th>Duree</th>
-                        <th>exp attendue</th>
-                        <th>id poste</th>
-                        <th>id recruteur entreprise</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    <?php
-                    displayTableUsers($annonces);
-                    ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <div class="cards" style="display: flex;">
 
+        <?php displayAnnonces($annonces) ?>
+    </div>
 </div>
 <!-- /.container-fluid -->
 

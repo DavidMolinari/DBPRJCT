@@ -1,13 +1,31 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Adrian
- * Date: 15/03/2019
- * Time: 09:44
+ * User: Davvm
+ * Date: 24/05/2019
+ * Time: 00:53
  */
+
 class competence
 {
+    private $id_competence;
     private $nom;
+
+    /**
+     * @return mixed
+     */
+    public function getIdCompetence()
+    {
+        return $this->id_competence;
+    }
+
+    /**
+     * @param mixed $id_competence
+     */
+    public function setIdCompetence($id_competence)
+    {
+        $this->id_competence = $id_competence;
+    }
 
     /**
      * @return mixed
@@ -24,4 +42,5 @@ class competence
     {
         $this->nom = $nom;
     }
+
 }

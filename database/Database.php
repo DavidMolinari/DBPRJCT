@@ -7,7 +7,7 @@ class Database{
             return self::$conn;
         }
         try {
-            $dbh = new PDO('mysql:host=localhost;dbname=dbprjct', 'root', '', array(PDO::ATTR_PERSISTENT => true));
+            $dbh = new PDO('mysql:host=91.121.155.160;dbname=stmncv4', 'stmncv4', 'p891OfBOYOwepmfc', array(PDO::ATTR_PERSISTENT => true));
             self::$conn = $dbh;
             return $dbh;
 

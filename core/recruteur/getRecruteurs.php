@@ -10,7 +10,7 @@
 if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
 if(isset($_GET['g'])){
 
-    require_once '../../class/manager/recruteurManager.php';
+    require_once '../../class/old_manager/recruteurManager.php';
     $recruteurManager = new recruteurManager();
     $recruteurs = $recruteurManager->getRecruteurs();
 }

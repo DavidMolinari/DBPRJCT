@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: utilisateur
- * Date: 15/03/2019
- * Time: 10:23
- */
-require_once '../../database/Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/database/Database.php';
+
 class userManager
 {
     private $conn;
@@ -14,70 +9,96 @@ class userManager
         $this->conn = Database::connect();
     }
 
-    public function addUser(user $user) {
-        $login = $user->getLogin();
-        $password = $user->getPassword();
-        $registerDate = $user->getRegisterDate();
-        $isAdmin = $user->getisAdmin();
-
-        $query = "INSERT INTO USER (login, password, registerDate, is_admin) values(
-        '".$login."',
-        '".$password."',
-        '".$registerDate."',
-        '".$isAdmin."')";
-
-        $sth = $this->conn->prepare($query);
-        $sth->execute();
-    }
-
-    public function getUsers() {
-        $sth = $this->conn->prepare("SELECT * from USER;");
+    public function getUsers()
+    {
+        $sth = $this->conn->prepare("SELECT * from user;");
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_OBJ);
         return $result;
     }
 
-    public function deleteUser($id){
-        $query = "DELETE FROM USER WHERE ID = '".$id."'";
+    public function deleteUser($id)
+    {
+        $query = "DELETE FROM user WHERE id_user = " . $id;
         $sth = $this->conn->prepare($query);
         $sth->execute();
+        $sth->fetch();
     }
 
-    public function updateUserById($id, user $user) {
+
+    public function updateUserById($id, user $user)
+    {
         $query = "
-        UPDATE USER
+        UPDATE user
          SET 
-         login = '".htmlspecialchars($user->getLogin())."',
-         password = '".htmlspecialchars($user->getPassword())."',
-         registerDate = '".htmlspecialchars($user->getRegisterDate())."',
-         is_admin = '".htmlspecialchars($user->getisAdmin())."'
-         WHERE id = ".htmlspecialchars($id)."
+         email = '" . htmlspecialchars($user->getEmail()) . "',
+         password = '" . htmlspecialchars($user->getPassword()) . "',
+         prenom = '" . htmlspecialchars($user->getPrenom()) . "',
+         nom = '" . htmlspecialchars($user->getNom()) . "',
+         sexe = '" . htmlspecialchars($user->getSexe()) . "',
+         tel = '" . htmlspecialchars($user->getTel()) . "',
+         adresse = '" . htmlspecialchars($user->getAdresse()) . "',
+         ville = '" . htmlspecialchars($user->getVille()) . "',
+         cp = '" . htmlspecialchars($user->getCp()) . "',
+         is_admin = '" . htmlspecialchars($user->getisAdmin()) . "'
+         WHERE id = " . htmlspecialchars($id) . "
         ";
 
         $sth = $this->conn->prepare($query);
         $sth->execute();
-
     }
 
     public function getUser($id)
     {
-        $query = "SELECT * FROM USER WHERE ID = '".$id."'";
+        $query = "SELECT * FROM user WHERE id_user = '" . $id . "'";
         $sth = $this->conn->prepare($query);
         $sth->execute();
     }
 
-    /**
-     * @param $login
-     * @param $pwd
-     * @return bool
-     */
-    public function verifyConnexion($login, $pwd){
-        $query = "SELECT * FROM USER WHERE LOGIN = '".$login."' AND PASSWORD = '".$pwd."'";
+    public function auth($email, $pwd)
+    {
+        $query = "SELECT id_user FROM user WHERE email = '" . $email . "' AND password = '" . $pwd . "'";
         $sth = $this->conn->prepare($query);
         $res = $sth->execute();
-        if($res != null) return true;
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+        if ($row) return true;
         return false;
     }
 
+
+    public function addUser(user $user)
+    {
+        $email = $user->getEmail();
+        $password = $user->getPassword();
+        $adresse = $user->getAdresse();
+        $ville = $user->getVille();
+        $cp = $user->getCp();
+        $tel = $user->getTel();
+        $prenom = $user->getPrenom();
+        $nom = $user->getNom();
+        $sexe = $user->getSexe();
+        $is_admin = $user->getisAdmin();
+
+        $query = "
+        INSERT INTO USER(email, password, nom, prenom, adresse, cp, ville, sexe, tel, is_admin, register_date)
+        values(
+        '" . $email . "',
+        '" . $password . "',
+        '" . $nom . "',
+        '" . $prenom . "',
+        '" . $adresse . "',
+        '" . $cp . "',
+        '" . $ville . "',
+        '" . $sexe . "',
+        '" . $tel . "',
+        '" . $is_admin . "',
+        '" . date('Y-m-d G:i:s') . "'
+        )";
+
+        $sth = $this->conn->prepare($query);
+        $res = $sth->execute();
+        echo '<script type="text/javascript"> window.open("../../index.php","_self");</script>';
+
+    }
 
 }

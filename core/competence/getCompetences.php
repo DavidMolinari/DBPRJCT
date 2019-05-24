@@ -9,7 +9,7 @@
 if(file_exists('../../../vendor/autoload.php')) require_once '../../../vendor/autoload.php';
 if(isset($_GET['g'])){
 
-    require_once '../../class/manager/competenceManager.php';
+    require_once '../../class/old_manager/competenceManager.php';
     $competencesManager = new competenceManager();
     $competences = $competencesManager->getCompetences();
 }
